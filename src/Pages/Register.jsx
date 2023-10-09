@@ -18,15 +18,16 @@ const Register = () => {
         const password = e.target.password.value 
         console.log(name, email, password)
 
-        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(password)) {
-            toast.error('Minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter & 1 number:')
-            return;
-        }else{
-            swal("Good job!", "You clicked the button!", "success");
-        }
+       
 
         createUser(email, password)
         .then(result =>{
+            if (password.length < 8) {
+                toast.error('Password must be at least 8 characters')
+                return;
+            }else{
+                swal("Good job!", "You successfully Registered!", "success");
+            }
             console.log(result.user)
         })
         .catch(error=>{

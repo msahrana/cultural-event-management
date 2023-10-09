@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import SocialLogin from "./SocialLogin";
+import toast from "react-hot-toast";
+import swal from 'sweetalert';
 
 
 const Login = () => {
@@ -18,8 +20,16 @@ const Login = () => {
         const password = e.target.password.value 
         console.log(email, password)
 
+        
+
         signIn(email,password)
         .then(result =>{
+            if (password.length < 8) {
+                toast.error('Password must be at least 8 characters')
+            }
+            else{
+                swal("Good job!", "You successfully Registered!", "success");
+            }
             console.log(result.user)
             navigate(location?.state ? location.state : '/')
         })
