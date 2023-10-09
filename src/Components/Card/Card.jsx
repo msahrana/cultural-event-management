@@ -2,43 +2,39 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import { useEffect, useState } from "react";
-import { Link, useLoaderData, useParams} from "react-router-dom";
+import { useLoaderData, useParams} from "react-router-dom";
 
 
 const Card = () => {
     
-    // const data = useLoaderData()
-    // console.log(data)
+    const data = useLoaderData()
+    console.log(data)
 
-    const id = useParams()
+    const {id} = useParams()
     console.log(id)
 
-    const [card, setCard] = useState({})
-
-    // const {id} = useParams()
-
-    // useEffect(()=>{
-    //     fetch(`/events.json/${card.id}`)
-    //     .then(data=> setCard(data))
-    // },[card.id])
-    // console.log(card)
+    const [card, setCard] = useState()
+    console.log(setCard)
 
     useEffect(()=>{
-        const findCard = card.find(card=> card.id === id)
+        const findCard = data.find(c=> c.id == id)
+        console.log(findCard)
         setCard(findCard)
-    },[])
-    console.log(card)
+    },[data])
+    
 
     const {image, name, price, description} = card || {}
 
-
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
-        <figure><img src={image} alt="image" /></figure>
-            <div className="card-body">
-                <h2 className="card-title">{name}</h2>
-                <p>Price: ${price}</p>
-                <p>{description}</p>
+        <div>
+            <h2 className="text-4xl font-bold text-center my-10">Event Details </h2>
+            <div className="card mx-auto w-96 bg-base-100 shadow-xl">
+            <figure><img src={image} alt="image" /></figure>
+                <div className="card-body">
+                    <h2 className="card-title">{name}</h2>
+                    <p>Price: ${price}</p>
+                    <p className="text-justify">{description}</p>
+                </div>
             </div>
         </div>
     );
