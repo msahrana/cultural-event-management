@@ -1,6 +1,10 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import swal from 'sweetalert';
+import toast from "react-hot-toast";
+import SocialLogin from "./SocialLogin";
+
 
 
 const Register = () => {
@@ -13,6 +17,13 @@ const Register = () => {
         const email = e.target.email.value 
         const password = e.target.password.value 
         console.log(name, email, password)
+
+        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(password)) {
+            toast.error('Minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter & 1 number:')
+            return;
+        }else{
+            swal("Good job!", "You clicked the button!", "success");
+        }
 
         createUser(email, password)
         .then(result =>{
@@ -49,6 +60,7 @@ const Register = () => {
                     <button type="submit" className="btn btn-primary w-full">Sign Up</button>
                 </div>
                 <p className="text-center mt-4 mb-4">Already have an account: <Link className="text-blue-600 font-bold" to='/login'>Login</Link></p>
+                <SocialLogin></SocialLogin>
             </form>
         </div>
     );

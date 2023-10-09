@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import SocialLogin from "./SocialLogin";
 
 
 const Login = () => {
@@ -8,6 +9,8 @@ const Login = () => {
     const location = useLocation()
     const navigate = useNavigate()
     console.log('located in login page',location)
+
+
 
     const handleLogin = e =>{
         e.preventDefault()
@@ -48,11 +51,8 @@ const Login = () => {
                         <button type="submit" className="btn btn-primary w-full">Login</button>
                     </div>
                     <p className="text-center mt-4 mb-4">Do not have an account: <Link className="text-blue-600 font-bold" to='/register'>Register</Link></p>
-                    <div className="text-center mt-4 mb-4">
-                        <h2 className="text-xl font-semibold">Login With <button className="btn btn-info">Google</button> </h2>
-                    </div>
+                    <SocialLogin></SocialLogin>
                 </form>
-                
             </div>
     );
 };

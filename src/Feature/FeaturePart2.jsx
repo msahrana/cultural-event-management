@@ -10,7 +10,7 @@ const FeaturePart2 = () => {
                     <img src="/nobanno utshob-0.jpg" className="-mt-20 -ml-10 max-w-sm rounded-lg shadow-2xl" />
                 </div>
                 <div className="w-1/2">
-                    <h1 className="text-5xl font-bold text-green-600">Nobanno Utshob!!!</h1>
+                    <h1 className="text-5xl font-bold text-yellow-400">Nobanno Utshob!!!</h1>
                     <h1 className="text-4xl font-bold">Nobanno Utshob!</h1>
                     <p className="py-6 text-justify">Utshob which means festival makes the phrase 
                     Nobanno Utshob a festival or celebration of <br /> 
