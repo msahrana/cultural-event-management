@@ -58,9 +58,9 @@ const Login = () => {
                         </label>
                     </div>
                     <div className="form-control mt-6">
-                        <button type="submit" className="btn btn-primary w-full">Login</button>
+                        <button type="submit" className="btn bg-red-500 w-full">Login</button>
                     </div>
-                    <p className="text-center mt-4 mb-4">Do not have an account: <Link className="text-blue-600 font-bold" to='/register'>Register</Link></p>
+                    <p className="text-center mt-4 mb-4">Do not have an account: <Link className="text-red-600 font-bold" to='/register'>Register</Link></p>
                     <SocialLogin></SocialLogin>
                 </form>
             </div>

@@ -27,7 +27,7 @@ const SocialLogin = () => {
             <div className="flex justify-around">
                 <button
                     onClick={() => handleSocialLogin(googleLogin)}
-                    className="btn btn-neutral btn-sm">Google</button>
+                    className="btn bg-yellow-400 btn-sm">Google</button>
             </div>
         </>
     );

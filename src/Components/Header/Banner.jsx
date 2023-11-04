@@ -3,7 +3,7 @@
 const Banner = () => {
     return (
         <div>
-            <img src="/banner.png" alt="" />
+            <img className="h-[700px] w-full" src="/banner.png" alt="" />
         </div>
     );
 };

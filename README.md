@@ -1,5 +1,5 @@
 
-live link: 
+Website name: EvenMaster
 
 5 Feature Point:
 (1) We events the Festivals program. Here different types of programs should be managed. 
